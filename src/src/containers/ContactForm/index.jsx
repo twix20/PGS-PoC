@@ -28,6 +28,11 @@ const styles = theme => ({
   form: {
     "& div": {
       marginBottom: theme.spacing.unit * 2
+    },
+    "& .required label:after": {
+      content: "'*'",
+      color: "red",
+      marginLeft: theme.spacing.unit / 2
     }
   }
 });
@@ -36,7 +41,7 @@ const FormikContactForm = ({ classes }) => {
   const initValues = { name: "", email: "", message: "" };
 
   const handleSubmit = values => {
-    console.log(JSON.stringify(values));
+    alert(JSON.stringify(values));
   };
 
   return (

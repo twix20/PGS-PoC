@@ -42,6 +42,7 @@ const Form = props => {
 
   const textFields = [
     {
+      className: "required",
       touched,
       errors,
       onChange,
@@ -51,6 +52,7 @@ const Form = props => {
       fullWidth: true
     },
     {
+      className: "required",
       touched,
       errors,
       onChange,
@@ -80,7 +82,7 @@ const Form = props => {
 
       <div className={classes.actionsContainer}>
         <Button type="submit" variant="contained" color="primary">
-          Submit
+          Send
         </Button>
       </div>
     </form>
