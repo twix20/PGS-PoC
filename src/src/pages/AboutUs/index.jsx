@@ -26,7 +26,7 @@ const cards = [
 const AboutUsPage = props => {
   return (
     <div>
-      <Grid container spacing={16} justify="center">
+      <Grid container spacing={24} justify="center">
         {cards.map(c => (
           <Grid item key={c.image}>
             <AboutCard {...c} />

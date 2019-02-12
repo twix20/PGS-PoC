@@ -15,8 +15,7 @@ const styles = theme => ({
     cursor: "pointer"
   },
   appBarContainer: {
-    display: "flex",
-    justifyContent: "center"
+    display: "flex"
   },
   appBar: {
     maxWidth: 500,
