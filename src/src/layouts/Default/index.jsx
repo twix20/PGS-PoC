@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Hidden from "@material-ui/core/Hidden";
@@ -26,13 +27,14 @@ const navBarItems = [
 const styles = theme => ({
   root: {
     display: "flex",
-    flexFlow: "column",
-    justifyContent: "center",
-    height: "100%"
+    flexDirection: "column",
+    minHeight: "100vh",
+    "& > div": {
+      display: "flex"
+    }
   },
   header: {
     borderBottom: `1px solid ${theme.palette.grey.A100}`,
-    display: "flex",
     justifyContent: "center"
   },
   headerInner: {
@@ -55,12 +57,14 @@ const DefaultLayout = ({ classes, children }) => {
       <div className={classes.header}>
         <div className={classes.headerInner}>
           <Hidden smDown>
-            <img
-              src={logo}
-              className="PGS-logo"
-              alt="logo"
-              className={classes.logo}
-            />
+            <Link to="/">
+              <img
+                src={logo}
+                className="PGS-logo"
+                alt="logo"
+                className={classes.logo}
+              />
+            </Link>
           </Hidden>
 
           <NavBar items={navBarItems} />

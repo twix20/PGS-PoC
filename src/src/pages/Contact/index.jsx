@@ -5,7 +5,8 @@ import ContactForm from "../../containers/ContactForm";
 
 const styles = theme => ({
   root: {
-    display: "flex"
+    display: "flex",
+    alignItems: "center"
   }
 });
 
