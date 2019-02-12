@@ -5,7 +5,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { withRouter } from "react-router-dom";
-import Typography from "@material-ui/core/Typography";
 
 const styles = theme => ({
   root: {
@@ -51,6 +50,7 @@ const NavBar = ({ classes, history, items }) => {
           <Tabs value={value} onChange={handleCallToRouter}>
             {items.map(i => (
               <Tab
+                key={i.text}
                 label={i.text}
                 classes={{
                   label: classes.tabLabel,
@@ -69,8 +69,7 @@ NavBar.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       to: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired,
-      pageComponent: PropTypes.node.isRequired
+      text: PropTypes.string.isRequired
     }).isRequired
   )
 };

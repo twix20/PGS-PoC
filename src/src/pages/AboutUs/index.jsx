@@ -11,14 +11,13 @@ const cards = [
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu."
   },
   {
-    image:
-      "https://c.pxhere.com/photos/44/fd/office_desk_work_study_tech_technology_working_business-723138.jpg!d",
+    image: "https://g10.infor.pl/p/_files/252000/6_maszyna_do_pisania_6_4.jpg",
     title: "Lorem Ipsum",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu."
   },
   {
     image:
-      "https://c.pxhere.com/photos/44/fd/office_desk_work_study_tech_technology_working_business-723138.jpg!d",
+      "https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/food/hero-and-hub/food/food-hero-1260x600.jpg",
     title: "Lorem Ipsum",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu."
   }
@@ -27,9 +26,9 @@ const cards = [
 const AboutUsPage = props => {
   return (
     <div>
-      <Grid container spacing={16}>
+      <Grid container spacing={16} justify="center">
         {cards.map(c => (
-          <Grid item>
+          <Grid item key={c.image}>
             <AboutCard {...c} />
           </Grid>
         ))}
