@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import orange from "@material-ui/core/colors/orange";
+import indigo from "@material-ui/core/colors/indigo";
 
 import DefaultLayout from "./layouts/DefaultLayout";
 
@@ -10,17 +13,27 @@ import SkiCamsPage from "./pages/SkiCams";
 // import logo from "./logo.svg";
 import "./App.css";
 
+const theme = createMuiTheme({
+  palette: {
+    primary: { main: indigo[500] },
+    secondary: { main: orange[600] }
+  },
+  typography: { useNextVariants: true }
+});
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <DefaultLayout>
-          <Switch>
-            <Route path="/contact" component={ContactPage} />
-            <Route path="/skicams" component={SkiCamsPage} />
-            <Route exact path="/" component={AboutUsPage} />
-          </Switch>
-        </DefaultLayout>
+        <MuiThemeProvider theme={theme}>
+          <DefaultLayout>
+            <Switch>
+              <Route path="/contact" component={ContactPage} />
+              <Route path="/skicams" component={SkiCamsPage} />
+              <Route exact path="/" component={AboutUsPage} />
+            </Switch>
+          </DefaultLayout>
+        </MuiThemeProvider>
         {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>

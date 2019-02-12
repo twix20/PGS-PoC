@@ -1,8 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
 
 import { Formik } from "formik";
@@ -23,7 +21,9 @@ const styles = theme => ({
     width: "100%"
   },
   paper: {
-    padding: theme.spacing.unit * 4
+    padding: `${theme.spacing.unit * 4}px ${theme.spacing.unit * 8}px`,
+    width: "100%",
+    maxWidth: 300
   },
   form: {
     "& div": {

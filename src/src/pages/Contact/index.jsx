@@ -1,13 +1,20 @@
 import React from "react";
+import { withStyles } from "@material-ui/core/styles";
 
 import ContactForm from "../../containers/ContactForm";
 
-const ContactPage = props => {
+const styles = theme => ({
+  root: {
+    display: "flex"
+  }
+});
+
+const ContactPage = ({ classes }) => {
   return (
-    <div>
+    <div className={classes.root}>
       <ContactForm />
     </div>
   );
 };
 
-export default ContactPage;
+export default withStyles(styles)(ContactPage);

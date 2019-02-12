@@ -68,7 +68,7 @@ const Form = props => {
       value: message,
       fullWidth: true,
       multiline: true,
-      rows: 3
+      rows: 6
     }
   ];
 
@@ -79,7 +79,7 @@ const Form = props => {
       ))}
 
       <div className={classes.actionsContainer}>
-        <Button type="submit" variant="contained" color="secondary">
+        <Button type="submit" variant="contained" color="primary">
           Submit
         </Button>
       </div>
