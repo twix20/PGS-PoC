@@ -72,9 +72,9 @@ class SkiCamListContainer extends Component {
 
     return (
       <div>
-        <Grid container spacing={16} justify="center">
+        <Grid container spacing={24} justify="center">
           {camCards.map(camCard => (
-            <Grid item key={camCard.title}>
+            <Grid key={camCard.title} item md={6}>
               <SkiCamCard {...camCard} />
             </Grid>
           ))}

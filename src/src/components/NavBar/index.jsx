@@ -46,7 +46,7 @@ const NavBar = ({ classes, history, items }) => {
   return (
     <div className={classes.root}>
       <div className={classes.appBarContainer}>
-        <AppBar position="static" className={classes.appBar}>
+        <AppBar position="static" className={classes.appBar} elevation={0}>
           <Tabs value={value} onChange={handleCallToRouter}>
             {items.map(i => (
               <Tab
