@@ -26,7 +26,7 @@ const styles = theme => ({
     maxWidth: 300
   },
   form: {
-    "& div": {
+    "& > div": {
       marginBottom: theme.spacing.unit * 2
     },
     "& .required label:after": {
