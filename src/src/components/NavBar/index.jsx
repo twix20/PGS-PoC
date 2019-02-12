@@ -8,8 +8,6 @@ import { withRouter } from "react-router-dom";
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
-    borderBottom: `1px solid ${theme.palette.grey.A100}`,
     zIndex: theme.zIndex.appBar
   },
   navItemContainer: {
@@ -21,7 +19,7 @@ const styles = theme => ({
     justifyContent: "center"
   },
   appBar: {
-    maxWidth: 900,
+    maxWidth: 500,
     backgroundColor: "white"
   },
   navItem: {},
@@ -29,7 +27,7 @@ const styles = theme => ({
     color: theme.palette.grey["A400"]
   },
   tabLabelSelected: {
-    color: theme.palette.primary.main
+    color: theme.palette.secondary.main
   }
 });
 
@@ -53,8 +51,8 @@ const NavBar = ({ classes, history, items }) => {
                 key={i.text}
                 label={i.text}
                 classes={{
-                  label: classes.tabLabel,
-                  selected: classes.tabLabelSelected
+                  selected: classes.tabLabelSelected,
+                  label: classes.tabLabel
                 }}
               />
             ))}

@@ -4,7 +4,7 @@ import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import orange from "@material-ui/core/colors/orange";
 import indigo from "@material-ui/core/colors/indigo";
 
-import DefaultLayout from "./layouts/DefaultLayout";
+import DefaultLayout from "./layouts/Default";
 
 import AboutUsPage from "./pages/AboutUs";
 import ContactPage from "./pages/Contact";
