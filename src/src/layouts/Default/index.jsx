@@ -36,7 +36,7 @@ const styles = theme => ({
     }
   },
   headerContainer: {
-    borderBottom: `1px solid ${theme.palette.grey.A100}`,
+    borderBottom: `1px solid ${theme.palette.grey[300]}`,
     justifyContent: "center"
   },
   header: {

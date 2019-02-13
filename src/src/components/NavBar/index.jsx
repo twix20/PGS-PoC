@@ -26,7 +26,9 @@ const styles = theme => ({
     color: theme.palette.grey["A400"]
   },
   tabLabelSelected: {
-    color: theme.palette.secondary.main
+    "& span": {
+      color: theme.palette.secondary.main
+    }
   }
 });
 

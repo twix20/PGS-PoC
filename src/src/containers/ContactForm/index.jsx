@@ -20,7 +20,7 @@ const styles = theme => ({
     width: "100%"
   },
   paper: {
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("sm")]: {
       padding: `${theme.spacing.unit * 4}px ${theme.spacing.unit * 8}px`
     },
     padding: `${theme.spacing.unit}px ${theme.spacing.unit * 2}px`,
