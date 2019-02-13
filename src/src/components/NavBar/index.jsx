@@ -18,8 +18,7 @@ const styles = theme => ({
     display: "flex"
   },
   appBar: {
-    maxWidth: 500,
-    backgroundColor: "white"
+    backgroundColor: theme.palette.common.white
   },
   navItem: {},
   tabLabel: {
