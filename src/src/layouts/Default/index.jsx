@@ -9,6 +9,8 @@ import NavBar from "../../components/NavBar";
 
 import logo from "../../assets/logo.png";
 
+export const contentWidth = 1000;
+
 const navBarItems = [
   {
     to: "/",
@@ -39,7 +41,7 @@ const styles = theme => ({
   },
   header: {
     width: "100%",
-    maxWidth: "800px"
+    maxWidth: contentWidth
   },
   contentContainer: {
     padding: theme.spacing.unit * 2,
@@ -48,7 +50,7 @@ const styles = theme => ({
   content: {
     display: "flex",
     [theme.breakpoints.up("md")]: {
-      maxWidth: 800
+      maxWidth: contentWidth
     }
   },
   footer: {},

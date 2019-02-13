@@ -65,6 +65,10 @@ class SkiCamListContainer extends Component {
     this.performFetchCams(skiCams);
   }
 
+  componentWillUnmount() {
+    this._source.cancel("Component unmounted");
+  }
+
   render() {
     const { camCards, isFetching } = this.state;
 
