@@ -55,7 +55,7 @@ const styles = theme => ({
   },
   footer: {},
   logo: {
-    maxWidth: "100px"
+    maxWidth: 100
   }
 });
 
