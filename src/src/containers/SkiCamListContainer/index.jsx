@@ -4,80 +4,46 @@ import PropTypes from "prop-types";
 import Grid from "@material-ui/core/Grid";
 
 import SkiCamCard from "../../components/SkiCamCard";
-import Loading from "../../components/Loading";
+import withRequestData from "../../components/hocs/withRequestData";
 
 import { fetchCams } from "../../api/XMashapeApi";
 
-import axios from "axios";
-
 class SkiCamListContainer extends Component {
-  state = {
-    camCards: [],
-    isFetching: true
-  };
+  constructor(props) {
+    super(props);
 
-  performFetchCams = skiCams => {
-    this._source = axios.CancelToken.source();
+    const { data, skiCams } = props;
 
-    //TODO: move it to hoc
-    fetchCams({
-      cancelToken: this._source.token
-    })
-      .then(response => {
-        const camCards = Object.entries(response.data)
-          .filter(c => c[1].name in skiCams)
-          .map(c => {
-            const locationCam = c[1];
-            const camsToDisplay = skiCams[locationCam.name];
+    this.camCards = Object.entries(data)
+      .filter(c => c[1].name in skiCams)
+      .map(c => {
+        const locationCam = c[1];
+        const camsToDisplay = skiCams[locationCam.name];
 
-            if (!camsToDisplay) throw new Error("Unknown location cam name");
+        if (!camsToDisplay) throw new Error("Unknown location cam name");
 
-            const images = camsToDisplay.cams.map(camName => {
-              const { url, name } = locationCam.cams[camName];
+        const images = camsToDisplay.cams.map(camName => {
+          const { url, name } = locationCam.cams[camName];
 
-              return {
-                url,
-                name
-              };
-            });
+          return {
+            url,
+            name
+          };
+        });
 
-            return {
-              title: locationCam.name,
-              images: images,
-              date: new Date()
-            };
-          });
-
-        this.setState({ camCards, isFetching: false });
-      })
-      .catch(error => {
-        if (axios.isCancel(error)) {
-          console.log("Request canceled", error);
-        } else {
-          console.log(error);
-        }
+        return {
+          title: locationCam.name,
+          images: images,
+          date: new Date()
+        };
       });
-  };
-
-  componentDidMount() {
-    const { skiCams } = this.props;
-
-    this.performFetchCams(skiCams);
-  }
-
-  componentWillUnmount() {
-    this._source.cancel("Component unmounted");
   }
 
   render() {
-    const { camCards, isFetching } = this.state;
-
-    if (isFetching) return <Loading />;
-
     return (
       <div>
         <Grid container spacing={24} justify="center">
-          {camCards.map(camCard => (
+          {this.camCards.map(camCard => (
             <Grid key={camCard.title} item md={6}>
               <SkiCamCard {...camCard} />
             </Grid>
@@ -92,4 +58,7 @@ SkiCamListContainer.propTypes = {
   skiCams: PropTypes.object.isRequired
 };
 
-export default SkiCamListContainer;
+export default withRequestData(
+  props => ({ request: fetchCams, params: {} }),
+  "data"
+)(SkiCamListContainer);
