@@ -33,17 +33,23 @@ const styles = theme => ({
       display: "flex"
     }
   },
-  header: {
+  headerContainer: {
     borderBottom: `1px solid ${theme.palette.grey.A100}`,
     justifyContent: "center"
   },
-  headerInner: {
+  header: {
     width: "100%",
     maxWidth: "800px"
   },
-  content: {
+  contentContainer: {
     padding: theme.spacing.unit * 2,
     flex: "1"
+  },
+  content: {
+    display: "flex",
+    [theme.breakpoints.up("md")]: {
+      maxWidth: 800
+    }
   },
   footer: {},
   logo: {
@@ -54,8 +60,8 @@ const styles = theme => ({
 const DefaultLayout = ({ classes, children }) => {
   return (
     <div className={classes.root}>
-      <div className={classes.header}>
-        <div className={classes.headerInner}>
+      <div className={classes.headerContainer}>
+        <div className={classes.header}>
           <Hidden smDown>
             <Link to="/">
               <img src={logo} alt="PGS-logo" className={classes.logo} />
@@ -66,8 +72,8 @@ const DefaultLayout = ({ classes, children }) => {
         </div>
       </div>
 
-      <Grid container className={classes.content} justify="center">
-        {children}
+      <Grid container className={classes.contentContainer} justify="center">
+        <div className={classes.content}>{children}</div>
       </Grid>
 
       <Footer className={classes.footer} />
