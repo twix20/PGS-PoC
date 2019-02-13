@@ -31,7 +31,12 @@ const styles = theme => ({
 });
 
 const NavBar = ({ classes, history, items }) => {
-  const [value, setValue] = React.useState(0); //TODO: change 0 to value based on url path
+  const [value, setValue] = React.useState(0);
+
+  // Set current tab value according to URL path
+  const currentItem = items.find(i => i.to === history.location.pathname);
+  const currentItemIndex = items.indexOf(currentItem);
+  if (value !== currentItemIndex) setValue(currentItemIndex);
 
   const handleCallToRouter = (event, value) => {
     const { to } = items[value];

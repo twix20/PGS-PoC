@@ -58,12 +58,7 @@ const DefaultLayout = ({ classes, children }) => {
         <div className={classes.headerInner}>
           <Hidden smDown>
             <Link to="/">
-              <img
-                src={logo}
-                className="PGS-logo"
-                alt="logo"
-                className={classes.logo}
-              />
+              <img src={logo} alt="PGS-logo" className={classes.logo} />
             </Link>
           </Hidden>
 

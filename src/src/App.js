@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import orange from "@material-ui/core/colors/orange";
-import indigo from "@material-ui/core/colors/indigo";
+import blue from "@material-ui/core/colors/blue";
 
 import DefaultLayout from "./layouts/Default";
 
@@ -15,7 +15,7 @@ import "./App.css";
 
 const theme = createMuiTheme({
   palette: {
-    primary: { main: indigo[500] },
+    primary: { main: blue[600] },
     secondary: { main: orange[600] }
   },
   typography: { useNextVariants: true }

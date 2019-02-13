@@ -7,6 +7,10 @@ const styles = theme => ({
   actionsContainer: {
     display: "flex",
     flexDirection: "row-reverse"
+  },
+  submitButton: {
+    color: theme.palette.common.white,
+    backgroundColor: theme.palette.primary.light
   }
 });
 
@@ -29,9 +33,7 @@ const Form = props => {
     touched,
     handleSubmit,
     handleChange,
-    isValid,
-    setFieldTouched,
-    validateForm
+    setFieldTouched
   } = props;
 
   const onChange = (name, e) => {
@@ -81,7 +83,11 @@ const Form = props => {
       ))}
 
       <div className={classes.actionsContainer}>
-        <Button type="submit" variant="contained" color="primary">
+        <Button
+          type="submit"
+          variant="contained"
+          className={classes.submitButton}
+        >
           Send
         </Button>
       </div>
